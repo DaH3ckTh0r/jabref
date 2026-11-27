@@ -417,7 +417,7 @@ jobs:
           tar xzvf clparse-0.9.1-x86_64-unknown-linux-musl.tar.gz
       - name: Install clparse
         run: sudo mv /tmp/clparse /usr/local/bin/clparse
-      - uses: awalsh128/cache-apt-pkgs-action@553a35bb8ebd9fcabcb1c9451aa4c98e1b4ca8a9 # v1.6.3
+      - uses: awalsh128/cache-apt-pkgs-action@009d70260b0f2e115cfa77447f8bd04c8e797064 # v2.0.0
         with:
           packages: jq
           version: 1.0
@@ -487,7 +487,7 @@ jobs:
         run: gradle :jabkit:runJabKitPortableSmokeTest
       - name: Prepare format failed test results
         if: needs.changes.outputs.run-gradle-ci-full == 'true' && failure()
-        uses: awalsh128/cache-apt-pkgs-action@553a35bb8ebd9fcabcb1c9451aa4c98e1b4ca8a9 # v1.6.3
+        uses: awalsh128/cache-apt-pkgs-action@009d70260b0f2e115cfa77447f8bd04c8e797064 # v2.0.0
         with:
           packages: xml-twig-tools xsltproc
           version: 1.0
